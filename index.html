@@ -97,23 +97,23 @@ const geojsonData = {
 
 // ================== BASE MAP PILIHAN =====================
 var streetLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 10,
+  maxZoom: 20,
   attribution: '&copy; OpenStreetMap contributors'
 });
 
 // Esri World Imagery + Labels
 var satelliteLayer = L.layerGroup([
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-    maxZoom: 10,
+    maxZoom: 20,
     attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
   }),
   L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
-    maxZoom: 10,
+    maxZoom: 20,
     opacity: 0.7,
     attribution: ''
   }),
   L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer/tile/{z}/{y}/{x}', {
-    maxZoom: 19,
+    maxZoom: 20,
     opacity: 0.5,
     attribution: ''
   })
@@ -122,7 +122,7 @@ var satelliteLayer = L.layerGroup([
 // ================== INISIALISASI MAP =====================
 var map = L.map('map', {
   center: [39.041475, 117.74265],
-  zoom: 15,
+  zoom: 20,
   layers: [satelliteLayer] // default
 });
 
