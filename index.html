@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Kontur Ledakan Tianjin - Multi Basemap</title>
+  <title>Alonso Explosion Contour - Aug 2015</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Leaflet CSS -->
@@ -43,7 +43,7 @@ const geojsonData = {
       "properties": {
         "name": "r=250 m",
         "fill": "#FFFF00",
-        "fill-opacity": 0.25,
+        "fill-opacity": 0.15,
         "stroke": "#000000",
         "stroke-width": 1
       },
@@ -61,7 +61,7 @@ const geojsonData = {
       "properties": {
         "name": "r=150 m",
         "fill": "#FF69B4",
-        "fill-opacity": 0.25,
+        "fill-opacity": 0.15,
         "stroke": "#000000",
         "stroke-width": 1
       },
@@ -79,7 +79,7 @@ const geojsonData = {
       "properties": {
         "name": "r=49 m",
         "fill": "#FF0000",
-        "fill-opacity": 0.25,
+        "fill-opacity": 0.20,
         "stroke": "#000000",
         "stroke-width": 1
       },
@@ -97,18 +97,18 @@ const geojsonData = {
 
 // ================== BASE MAP PILIHAN =====================
 var streetLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 19,
+  maxZoom: 10,
   attribution: '&copy; OpenStreetMap contributors'
 });
 
 // Esri World Imagery + Labels
 var satelliteLayer = L.layerGroup([
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-    maxZoom: 19,
+    maxZoom: 10,
     attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
   }),
   L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
-    maxZoom: 19,
+    maxZoom: 10,
     opacity: 0.7,
     attribution: ''
   }),
@@ -123,7 +123,7 @@ var satelliteLayer = L.layerGroup([
 var map = L.map('map', {
   center: [39.041475, 117.74265],
   zoom: 15,
-  layers: [streetLayer] // default
+  layers: [satelliteLayer] // default
 });
 
 // ================== CONTROL PILIHAN LAYER =====================
